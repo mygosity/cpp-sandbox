@@ -115,6 +115,17 @@ inline std::string GetFormattedTime(const uint64_t timeMs) {
     return answer;
 }
 
+inline std::string JoinStringVector(const std::vector<std::string>& vec, const std::string& delimiter = "") {
+    std::string s;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        s.append(vec[i]);
+        if (i < vec.size() - 1) {
+            s.append(delimiter);
+        }
+    }
+    return s;
+}
+
 inline std::string StringifyVectorContents(const std::vector<std::string>& vec, const std::string optionalPrepend = "") {
     std::string s = optionalPrepend + " { ";
     for (int32_t i = 0; i < vec.size(); ++i) {
