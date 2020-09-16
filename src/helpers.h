@@ -114,6 +114,10 @@ inline std::vector<std::string> SplitString(const std::string& target,
     return answer;
 }
 
+inline std::string GetStringBetweenIndices(const std::string& target, const size_t leftIndex, const size_t rightIndex) {
+    return target.substr(leftIndex + 1, rightIndex - leftIndex - 1);
+}
+
 inline std::string JoinStringVector(const std::vector<std::string>& vec, const std::string& delimiter = "") {
     std::string s;
     for (size_t i = 0; i < vec.size(); ++i) {
