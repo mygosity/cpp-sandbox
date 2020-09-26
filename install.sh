@@ -25,5 +25,5 @@ fi
 cp ./buildscripts/${PLATFORM}/m_create.sh ./create.sh
 cp ./buildscripts/${PLATFORM}/m_run.sh ./run.sh
 
-mkdir _logs
-mkdir project
+mkdir -p _logs
+mkdir -p project
