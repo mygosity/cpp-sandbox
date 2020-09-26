@@ -1,6 +1,8 @@
-PLATFORM="mac"
+#!/bin/bash
 
-function install() {
+function install {
+    PLATFORM=$1
+
     if [ "$PLATFORM" != "windows" ]; then
         cp ./buildscripts/${PLATFORM}/m_fullbuild.sh ./fullbuild.sh
         cp ./buildscripts/${PLATFORM}/m_make.sh ./make.sh
@@ -16,16 +18,13 @@ function install() {
 
 case $1 in
     w)  echo "*************** installing windows scripts *************** "
-        PLATFORM="windows"
-        install
+        install "windows"
         ;;
     m)  echo "*************** installing mac scripts *************** "
-        PLATFORM="mac"
-        install
+        install "mac"
         ;;
     l)  echo "*************** installing linux scripts - assuming ubuntu18.04 *************** "
-        PLATFORM="linux"
-        install
+        install "linux"
         ;;
     *)
         echo "*************** Required argument missing"
