@@ -1,2 +1,2 @@
 cd project
-make
+make -j
